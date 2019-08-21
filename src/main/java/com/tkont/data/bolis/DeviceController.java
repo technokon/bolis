@@ -27,6 +27,32 @@ public class DeviceController {
         data.setTemp(75);
         return data;
     }
+    
+    @RequestMapping("/all-data")
+    public DeviceData[] requestAllData() {
+        DeviceData data = new DeviceData();
+        data.setItemProcessingId(12);
+        data.setName("Turbine shaft x54");
+        data.setStart(new Date());
+        data.setOperationCapacity(30);
+        data.setTemp(75);
+
+        DeviceData data1 = new DeviceData();
+        data1.setItemProcessingId(12);
+        data1.setName("Turbine shaft x54");
+        data1.setStart(new Date());
+        data1.setOperationCapacity(30);
+        data1.setTemp(75);
+
+        DeviceData data2 = new DeviceData();
+        data2.setItemProcessingId(12);
+        data2.setName("Turbine shaft x54");
+        data2.setStart(new Date());
+        data2.setOperationCapacity(30);
+        data2.setTemp(75);
+        
+        return new DeviceData[] {data, data1, data2};
+    }
 
     @RequestMapping("/device-data-live")
     public SseEmitter requestLiveData() {

@@ -28,6 +28,17 @@ public class DeviceController {
         return data;
     }
     
+    @RequestMapping("/device-data-special")
+    public DeviceData requestSpecialData() {
+        DeviceData data = new DeviceData();
+        data.setItemProcessingId(345);
+        data.setName("Circular Saw v58");
+        data.setStart(new Date());
+        data.setOperationCapacity(50);
+        data.setTemp(95);
+        return data;
+    }
+    
     @RequestMapping("/all-data")
     public DeviceData[] requestAllData() {
         DeviceData data = new DeviceData();
